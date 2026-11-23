@@ -28,6 +28,7 @@ public enum NotchViews {
     case home
     case shelf
     case terminal
+    case recents
 }
 
 enum SettingsEnum {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0A000C2F00000100AAAA0C /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A000B2F00000100AAAA0B /* RecentsView.swift */; };
+		5E0A000A2F00000100AAAA0A /* RecentItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A00092F00000100AAAA09 /* RecentItemsStore.swift */; };
 		5E0A00052F00000100AAAA05 /* NotchShelfCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A00042F00000100AAAA04 /* NotchShelfCLI.swift */; };
 		5E0A00072F00000100AAAA07 /* NotchTerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A00062F00000100AAAA06 /* NotchTerminalView.swift */; };
 		5E0A00032F00000100AAAA03 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0A00022F00000100AAAA02 /* SwiftTerm */; };
@@ -177,6 +179,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E0A000B2F00000100AAAA0B /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
+		5E0A00092F00000100AAAA09 /* RecentItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentItemsStore.swift; sourceTree = "<group>"; };
 		5E0A00042F00000100AAAA04 /* NotchShelfCLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchShelfCLI.swift; sourceTree = "<group>"; };
 		5E0A00062F00000100AAAA06 /* NotchTerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchTerminalView.swift; sourceTree = "<group>"; };
 		1100290B2E847E2800035A57 /* NSItemProvider+LoadHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+LoadHelpers.swift"; sourceTree = "<group>"; };
@@ -349,6 +353,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0A000D2F00000100AAAA0D /* Recents */ = {
+			isa = PBXGroup;
+			children = (
+				5E0A00092F00000100AAAA09 /* RecentItemsStore.swift */,
+				5E0A000B2F00000100AAAA0B /* RecentsView.swift */,
+			);
+			path = Recents;
+			sourceTree = "<group>";
+		};
 		5E0A00082F00000100AAAA08 /* Terminal */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +505,7 @@
 				14C08BB72C8DE49E000F8AA0 /* Calendar */,
 				9A987A042C73CA66005CA465 /* Shelf */,
 				5E0A00082F00000100AAAA08 /* Terminal */,
+				5E0A000D2F00000100AAAA0D /* Recents */,
 				149E0B982C737D26006418B1 /* Webcam */,
 				B18654312C6F45AE000B926A /* Live activities */,
 				B18654302C6F4590000B926A /* Settings */,
@@ -946,6 +960,8 @@
 				1113ABCE2E80E27000EC13B2 /* ShelfActionService.swift in Sources */,
 				5E0A00052F00000100AAAA05 /* NotchShelfCLI.swift in Sources */,
 				5E0A00072F00000100AAAA07 /* NotchTerminalView.swift in Sources */,
+				5E0A000C2F00000100AAAA0C /* RecentsView.swift in Sources */,
+				5E0A000A2F00000100AAAA0A /* RecentItemsStore.swift in Sources */,
 				1160F8D82DD98230006FBB94 /* NotchShape.swift in Sources */,
 				5917FD112E57891600E87F1C /* MediaKeyInterceptor.swift in Sources */,
 				14C08BC12C8E03AD000F8AA0 /* NSImage+Extensions.swift in Sources */,

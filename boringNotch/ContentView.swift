@@ -346,6 +346,8 @@ struct ContentView: View {
                         ShelfView()
                     case .terminal:
                         NotchTerminalView()
+                    case .recents:
+                        RecentsView()
                     }
                 }
                 .transition(
