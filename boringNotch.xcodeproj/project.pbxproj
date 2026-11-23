@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0A00052F00000100AAAA05 /* NotchShelfCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A00042F00000100AAAA04 /* NotchShelfCLI.swift */; };
+		5E0A00072F00000100AAAA07 /* NotchTerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A00062F00000100AAAA06 /* NotchTerminalView.swift */; };
+		5E0A00032F00000100AAAA03 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0A00022F00000100AAAA02 /* SwiftTerm */; };
 		1100290C2E847E2800035A57 /* NSItemProvider+LoadHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100290B2E847E2800035A57 /* NSItemProvider+LoadHelpers.swift */; };
 		110029272E84FD4C00035A57 /* TemporaryFileStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110029262E84FD4C00035A57 /* TemporaryFileStorageService.swift */; };
 		1100292A2E8691B400035A57 /* FileShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110029292E8691B400035A57 /* FileShareView.swift */; };
@@ -181,6 +184,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E0A00042F00000100AAAA04 /* NotchShelfCLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchShelfCLI.swift; sourceTree = "<group>"; };
+		5E0A00062F00000100AAAA06 /* NotchTerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchTerminalView.swift; sourceTree = "<group>"; };
 		1100290B2E847E2800035A57 /* NSItemProvider+LoadHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+LoadHelpers.swift"; sourceTree = "<group>"; };
 		110029262E84FD4C00035A57 /* TemporaryFileStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryFileStorageService.swift; sourceTree = "<group>"; };
 		110029292E8691B400035A57 /* FileShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareView.swift; sourceTree = "<group>"; };
@@ -349,6 +354,7 @@
 				111BEA512ECFBF7F0079DD4E /* MacroVisionKit in Frameworks */,
 				B18654392C6F4990000B926A /* KeyboardShortcuts in Frameworks */,
 				B19016222CC15B3D00E3F12E /* Defaults in Frameworks */,
+				5E0A00032F00000100AAAA03 /* SwiftTerm in Frameworks */,
 				111BE95D2ECD71E10079DD4E /* AsyncXPCConnection in Frameworks */,
 				B1628B922CC260C0003D8DF3 /* SwiftUIIntrospect in Frameworks */,
 			);
@@ -357,6 +363,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0A00082F00000100AAAA08 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				5E0A00062F00000100AAAA06 /* NotchTerminalView.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
 		1113ABB82E80E27000EC13B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +390,7 @@
 				1113ABCF2E80E6BB00EC13B2 /* ThumbnailService.swift */,
 				1113ABBA2E80E27000EC13B2 /* QuickLookService.swift */,
 				1113ABBC2E80E27000EC13B2 /* ShelfActionService.swift */,
+				5E0A00042F00000100AAAA04 /* NotchShelfCLI.swift */,
 				1113ABBD2E80E27000EC13B2 /* ShelfDropService.swift */,
 				1113ABBE2E80E27000EC13B2 /* ShelfPersistenceService.swift */,
 			);
@@ -490,6 +505,7 @@
 				B1C448992C97375A001F0858 /* Tips */,
 				14C08BB72C8DE49E000F8AA0 /* Calendar */,
 				9A987A042C73CA66005CA465 /* Shelf */,
+				5E0A00082F00000100AAAA08 /* Terminal */,
 				149E0B982C737D26006418B1 /* Webcam */,
 				B18654312C6F45AE000B926A /* Live activities */,
 				B18654302C6F4590000B926A /* Settings */,
@@ -807,6 +823,7 @@
 				B18654382C6F4990000B926A /* KeyboardShortcuts */,
 				9A987A0F2C73CA8D005CA465 /* Collections */,
 				B19016212CC15B3D00E3F12E /* Defaults */,
+				5E0A00022F00000100AAAA02 /* SwiftTerm */,
 				B1628B912CC260C0003D8DF3 /* SwiftUIIntrospect */,
 				1194E8842EA57D23009C82D6 /* SkyLightWindow */,
 				11F748722EC9DA9300F841DB /* Lottie */,
@@ -854,6 +871,7 @@
 				9A987A0E2C73CA8D005CA465 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				9A987A112C73CAA1005CA465 /* XCRemoteSwiftPackageReference "Pow" */,
 				B19016202CC15B3D00E3F12E /* XCRemoteSwiftPackageReference "Defaults" */,
+				5E0A00012F00000100AAAA01 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
 				B1628B902CC260C0003D8DF3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 				1194E8832EA57D23009C82D6 /* XCRemoteSwiftPackageReference "SkyLightWindow" */,
 				11F748712EC9DA9300F841DB /* XCRemoteSwiftPackageReference "lottie-spm" */,
@@ -948,6 +966,8 @@
 				1113ABCC2E80E27000EC13B2 /* ShelfDropService.swift in Sources */,
 				1100292E2E86940F00035A57 /* QuickShareService.swift in Sources */,
 				1113ABCE2E80E27000EC13B2 /* ShelfActionService.swift in Sources */,
+				5E0A00052F00000100AAAA05 /* NotchShelfCLI.swift in Sources */,
+				5E0A00072F00000100AAAA07 /* NotchTerminalView.swift in Sources */,
 				1160F8D82DD98230006FBB94 /* NotchShape.swift in Sources */,
 				5917FD112E57891600E87F1C /* MediaKeyInterceptor.swift in Sources */,
 				14C08BC12C8E03AD000F8AA0 /* NSImage+Extensions.swift in Sources */,
@@ -1350,6 +1370,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5E0A00012F00000100AAAA01 /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm";
+			requirement = {
+				kind = exactVersion;
+				version = 1.20.0;
+			};
+		};
 		111BE95B2ECD71E10079DD4E /* XCRemoteSwiftPackageReference "AsyncXPCConnection" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/AsyncXPCConnection";
@@ -1441,6 +1469,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E0A00022F00000100AAAA02 /* SwiftTerm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E0A00012F00000100AAAA01 /* XCRemoteSwiftPackageReference "SwiftTerm" */;
+			productName = SwiftTerm;
+		};
 		111BE95C2ECD71E10079DD4E /* AsyncXPCConnection */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 111BE95B2ECD71E10079DD4E /* XCRemoteSwiftPackageReference "AsyncXPCConnection" */;

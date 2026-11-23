@@ -279,7 +279,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.alphaValue = 1
     }
 
+    func application(_ application: NSApplication, open urls: [URL]) {
+        for url in urls { NotchShelfCLI.handle(url) }
+    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
+        NotchShelfCLI.installScript()
 
         NotificationCenter.default.addObserver(
             self,
