@@ -33,6 +33,13 @@ final class NotchTerminalSession {
             currentDirectory: NSHomeDirectory()
         )
     }
+
+    /// Types shell-quoted paths at the prompt without pressing return.
+    func type(paths: [String]) {
+        let quoted = paths.map { "'" + $0.replacingOccurrences(of: "'", with: "'\\''") + "'" }
+        guard !quoted.isEmpty else { return }
+        view.send(txt: quoted.joined(separator: " ") + " ")
+    }
 }
 
 struct NotchTerminalView: NSViewRepresentable {

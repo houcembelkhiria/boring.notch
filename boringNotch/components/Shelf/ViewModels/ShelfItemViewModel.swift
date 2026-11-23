@@ -304,6 +304,7 @@ final class ShelfItemViewModel: ObservableObject {
         }
 
         if !selectedFileURLs.isEmpty { addMenuItem(title: "Show in Finder") }
+        if !selectedFileURLs.isEmpty { addMenuItem(title: "Send Path to Terminal") }
         // Allow Quick Look for files and link URLs
         if !selectedFileURLs.isEmpty || !selectedLinkURLs.isEmpty {
             // Add Quick Look menu item
@@ -481,6 +482,12 @@ final class ShelfItemViewModel: ObservableObject {
             case "Rename":
                 let selected = ShelfSelectionModel.shared.selectedItems(in: ShelfStateViewModel.shared.items)
                 if selected.count == 1, let single = selected.first { showRenameDialog(for: single) }
+
+            case "Send Path to Terminal":
+                let selected = ShelfSelectionModel.shared.selectedItems(in: ShelfStateViewModel.shared.items)
+                let paths = selected.compactMap { $0.fileURL?.path }
+                NotchTerminalSession.shared.type(paths: paths)
+                BoringViewCoordinator.shared.currentView = .terminal
 
             case "Show in Finder":
                 let selected = ShelfSelectionModel.shared.selectedItems(in: ShelfStateViewModel.shared.items)

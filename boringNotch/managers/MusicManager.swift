@@ -408,6 +408,21 @@ class MusicManager: ObservableObject {
             .replacingOccurrences(of: "\u{FFFD}", with: "")
     }
 
+    /// Retry with a free-text query and the title stripped of "feat."/"remaster"/bracket noise.
+    private func fallbackLyricsSearch(title: String, artist: String) async -> [[String: Any]] {
+        var cleaned = title
+        for pattern in [#"\s*[\(\[][^\)\]]*[\)\]]"#, #"\s+-\s+.*$"#, #"\s+(feat\.?|ft\.?|featuring)\s+.*$"#] {
+            cleaned = cleaned.replacingOccurrences(of: pattern, with: "", options: [.regularExpression, .caseInsensitive])
+        }
+        let query = "\(cleaned) \(artist)".trimmingCharacters(in: .whitespaces)
+        guard let q = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: "https://lrclib.net/api/search?q=\(q)"),
+              let (data, response) = try? await URLSession.shared.data(from: url),
+              (response as? HTTPURLResponse)?.statusCode == 200
+        else { return [] }
+        return (try? JSONSerialization.jsonObject(with: data) as? [[String: Any]]) ?? []
+    }
+
     @MainActor
     private func fetchLyricsFromWeb(title: String, artist: String) async {
         let cleanTitle = normalizedQuery(title)
@@ -433,8 +448,11 @@ class MusicManager: ObservableObject {
                 self.isFetchingLyrics = false
                 return
             }
-            if let jsonArray = try JSONSerialization.jsonObject(with: data) as? [[String: Any]],
-               let first = jsonArray.first {
+            var results = (try JSONSerialization.jsonObject(with: data) as? [[String: Any]]) ?? []
+            if results.isEmpty {
+                results = await fallbackLyricsSearch(title: cleanTitle, artist: cleanArtist)
+            }
+            if let first = results.first {
                 // Prefer plain lyrics (syncedLyrics may also be present)
                 let plain = (first["plainLyrics"] as? String)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 let synced = (first["syncedLyrics"] as? String)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
